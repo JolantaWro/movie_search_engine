@@ -23,12 +23,15 @@ const fetchAsyncData = (value) => {
     return async function(dispatch) {
         dispatch(startFetching());
         try{
-            const data = await getMovieData(value)
-            if (data.status === 200){
-                const movie = await data.json()
-                dispatch(dataFetched(movie))
-            } else {
-                dispatch(dataError("Błędy"))
+            const data = await getMovieData()
+            const movies = await data.json()
+            console.log(movies)
+            if(movies.response) {
+                console.log(movies.search)
+                dispatch(dataFetched(movies.search))
+            //     dispatch(dataFetched([movies]))
+            // } else {
+            //     dispatch(dataError("Błędy"))
             }
         }
         catch (error) {
