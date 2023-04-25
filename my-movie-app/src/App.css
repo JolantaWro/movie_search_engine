@@ -3,3 +3,17 @@
   height: 100vh;
   padding-top: 2em;
 }
+
+.control {
+  width: 300px;
+  padding-top: 2em;
+  margin-left: 6em;
+  display: flex;
+}
+
+button.button.is-info {
+  margin-left: 0.5em;
+}
+.movie {
+  padding-top: 2em;
+}
